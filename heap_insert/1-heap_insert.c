@@ -13,6 +13,7 @@ void swap_values(heap_t *node1, heap_t *node2);
 heap_t *heapify_up(heap_t *node);
 void enqueue(queue_node_t **queue, heap_t *tree_node);
 heap_t *dequeue(queue_node_t **queue);
+void free_queue(queue_node_t *queue);
 
 /**
  * heap_insert - insert a value for max heap
@@ -77,6 +78,7 @@ heap_t *find_first_available(heap_t *root)
 
         if (current->left == NULL || current->right == NULL)
         {
+	    free_queue(queue);
             return (current);
         }
 
@@ -91,6 +93,7 @@ heap_t *find_first_available(heap_t *root)
         }
     }
 
+    free_queue(queue);
     return (NULL);
 }
 
@@ -174,17 +177,18 @@ heap_t *dequeue(queue_node_t **queue)
 }
 
 /**
- * free_heap - Frees all nodes in the heap.
- * @root: Pointer to the root node of the heap.
+ * free_heap - Frees all nodes in the heap
+ * @root: Pointer to the root node of the heap
  */
-void free_heap(heap_t *root)
+void free_queue(queue_node_t *queue)
 {
-    if (root != NULL)
+    queue_node_t *temp;
+
+    while (queue != NULL)
     {
-        free_heap(root->left);
-        free_heap(root->right);
-        free(root);
+        temp = queue;
+        queue = queue->next;
+        free(temp);
     }
 }
-
 
