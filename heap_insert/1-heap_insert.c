@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include "binary_trees.h"
 
+typedef struct queue_node_s
+{
+heap_t *tree_node;
+struct queue_node_s *next;
+} queue_node_t;
+
 heap_t *find_first_available(heap_t *root);
 void swap_values(heap_t *node1, heap_t *node2);
 heap_t *heapify_up(heap_t *node);
