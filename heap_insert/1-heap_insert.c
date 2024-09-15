@@ -2,13 +2,6 @@
 #include <stdlib.h>
 #include "binary_trees.h"
 
-heap_t *find_first_available(heap_t *root);
-void swap_values(heap_t *node1, heap_t *node2);
-heap_t *heapify_up(heap_t *node);
-void enqueue(queue_node_t **queue, heap_t *tree_node);
-heap_t *dequeue(queue_node_t **queue);
-void free_queue(queue_node_t *queue);
-
 /**
  * heap_insert - insert a value for max heap
  * @root: double pointer to root
