@@ -173,3 +173,18 @@ heap_t *dequeue(queue_node_t **queue)
     return (node);
 }
 
+/**
+ * free_heap - Frees all nodes in the heap.
+ * @root: Pointer to the root node of the heap.
+ */
+void free_heap(heap_t *root)
+{
+    if (root != NULL)
+    {
+        free_heap(root->left);
+        free_heap(root->right);
+        free(root);
+    }
+}
+
+
