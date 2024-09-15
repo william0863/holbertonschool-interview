@@ -89,29 +89,21 @@ return (NULL);
 }
 
 /**
- * swap_values - swaps values of node
- * @node1: first node
- * @node2: second node
- */
-void swap_values(heap_t *node1, heap_t *node2)
-{
-int temp = node1->n;
-
-node1->n = node2->n;
-node2->n = temp;
-}
-
-/**
- * heapify_up - r
+ * heapify_up - restores max heap property by swapping values
  * @node: node
  *
  * Return: pointer to the new node
  */
 heap_t *heapify_up(heap_t *node)
 {
+int temp;
+
 while (node->parent && node->n > node->parent->n)
 {
-swap_values(node, node->parent);
+temp = node->n;
+node->n = node->parent->n;
+node->parent->n = temp;
+
 node = node->parent;
 }
 
