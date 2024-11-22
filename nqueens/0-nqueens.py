@@ -3,7 +3,6 @@ import sys
 
 def print_usage(message):
     print(message)
-    print("Usage: nqueens N")
     sys.exit(1)
 
 def solve_nqueens(n):
