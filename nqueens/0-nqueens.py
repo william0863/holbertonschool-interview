@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 import sys
 
+
 def print_usage(message):
     print(message)
     sys.exit(1)
+
 
 def solve_nqueens(n):
     def backtrack(row):
@@ -22,6 +24,7 @@ def solve_nqueens(n):
     board = [-1] * n
     backtrack(0)
     return solutions
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
