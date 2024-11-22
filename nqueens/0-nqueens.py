@@ -30,10 +30,10 @@ if __name__ == "__main__":
     try:
         N = int(sys.argv[1])
     except ValueError:
-        print_usage("N has to be a number")
+        print_usage("N must be a number")
 
     if N < 4:
-        print_usage("N has to be atleast 4")
+        print_usage("N must be atleast 4")
         
     solutions = solve_nqueens(N)
     for solution in solutions:
