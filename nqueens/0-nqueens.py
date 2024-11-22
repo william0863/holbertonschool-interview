@@ -33,7 +33,7 @@ if __name__ == "__main__":
         print_usage("N must be a number")
 
     if N < 4:
-        print_usage("N must be atleast 4")
+        print_usage("N must be at least 4")
         
     solutions = solve_nqueens(N)
     for solution in solutions:
