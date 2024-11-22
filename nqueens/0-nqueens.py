@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 import sys
 
+def print_usage(message):
+    print(message)
+    print("Usage: nqueens N")
+    sys.exit(1)
+
 def solve_nqueens(n):
     def backtrack(row):
         if row == n:
@@ -21,13 +26,16 @@ def solve_nqueens(n):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        sys.exit(1)
+        print_usage("Usage: nqueens N")
+
     try:
         N = int(sys.argv[1])
     except ValueError:
-        sys.exit(1)
+        print_usage("N has to be a number")
+
     if N < 4:
-        sys.exit(1)
+        print_usage("N has to be atleast 4")
+        
     solutions = solve_nqueens(N)
     for solution in solutions:
         print(solution)
