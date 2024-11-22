@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     if N < 4:
         print_usage("N must be at least 4")
-        
+
     solutions = solve_nqueens(N)
     for solution in solutions:
         print(solution)
