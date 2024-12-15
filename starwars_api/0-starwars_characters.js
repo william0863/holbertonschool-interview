@@ -29,8 +29,13 @@ request(apiUrl, (error, response, body) => {
   }
 
   const characterUrls = data.characters;
-  characterUrls.forEach((characterUrl) => {
-    request(characterUrl, (charError, charResponse, charBody) => {
+
+  const fetchCharacterName = (index) => {
+    if (index >= characterUrls.length) {
+      return;
+    }
+
+    request(characterUrls[index], (charError, charResponse, charBody) => {
       if (charError) {
         console.error(charError);
         return;
@@ -43,7 +48,11 @@ request(apiUrl, (error, response, body) => {
 
       const characterData = JSON.parse(charBody);
       console.log(characterData.name);
+
+      fetchCharacterName(index + 1);
     });
-  });
+  };
+
+  fetchCharacterName(0);
 });
 
