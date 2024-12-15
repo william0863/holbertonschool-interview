@@ -55,4 +55,3 @@ request(apiUrl, (error, response, body) => {
 
   fetchCharacterName(0);
 });
-
