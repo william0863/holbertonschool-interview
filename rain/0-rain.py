@@ -3,12 +3,14 @@
 Function to calculate the total amount of rain retained
 """
 
+
 def rain(walls):
     """
     Calculate the total amount of water trapped between walls after it rains.
 
     Args:
-    walls (list): A list of non-negative integers representing the heights of the walls.
+    walls (list): A list of non-negative integers representing the heights 
+    of the walls.
 
     Returns:
     int: The total amount of rain retained.
@@ -32,4 +34,3 @@ def rain(walls):
         rain_retained += max(0, min(left_max[i], right_max[i]) - walls[i])
 
     return rain_retained
-
