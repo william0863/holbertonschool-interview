@@ -9,7 +9,7 @@ def rain(walls):
     Calculate the total amount of water trapped between walls after it rains.
 
     Args:
-    walls (list): A list of non-negative integers representing the heights 
+    walls (list): A list of non-negative integers representing the heights
     of the walls.
 
     Returns:
