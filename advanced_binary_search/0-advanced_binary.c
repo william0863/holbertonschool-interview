@@ -22,7 +22,7 @@ void print_array(int *array, size_t start, size_t end)
 }
 
 /**
- * recursive_binary_search - Recursively searches for a 
+ * recursive_binary_search - Recursively searches for a
  * value in a sorted array
  * @array: array
  * @start: start of subarray
@@ -52,7 +52,7 @@ int recursive_binary_search(int *array, size_t start, size_t end, int value)
 }
 
 /**
- * advanced_binary - Searches for a value in a sorted array 
+ * advanced_binary - Searches for a value in a sorted array
  * using advanced binary search
  * @array: array
  * @size: size of the array
