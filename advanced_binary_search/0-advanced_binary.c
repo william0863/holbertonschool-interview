@@ -52,7 +52,8 @@ int recursive_binary_search(int *array, size_t start, size_t end, int value)
 }
 
 /**
- * advanced_binary - Searches for a value in a sorted array using advanced binary search
+ * advanced_binary - Searches for a value in a sorted array 
+ * using advanced binary search
  * @array: array
  * @size: size of the array
  * @value: The value to search
