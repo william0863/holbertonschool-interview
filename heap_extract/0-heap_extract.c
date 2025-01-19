@@ -90,7 +90,6 @@ int heap_extract(heap_t **root)
 
     free(last);
     heapify_down(*root);
-
     return (value);
 }
 
