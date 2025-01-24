@@ -73,19 +73,15 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 		exit(98);
 	}
-
 	num1 = argv[1];
 	num2 = argv[2];
 	len1 = _strlen(num1);
 	len2 = _strlen(num2);
-
 	result = malloc(sizeof(int) * (len1 + len2));
 	if (!result)
 		exit(98);
-
 	for (i = 0; i < len1 + len2; i++)
 		result[i] = 0;
-
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		n1 = num1[i] - '0';
@@ -99,7 +95,6 @@ int main(int argc, char *argv[])
 		}
 		result[i + j + 1] += carry;
 	}
-
 	print_result(result, len1 + len2);
 	free(result);
 	return (0);
