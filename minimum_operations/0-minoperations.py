@@ -1,12 +1,12 @@
-#!/usr/bin/python3
-
-"""
-Module to calculate the minimum number of operations required
-for achieving exactly n 'H' characters using Copy All and Paste operations.
-"""
-
-def min_operations(n):
-    if n <= 1:
+def minOperations(n):
+    """
+    Calculate the minimum number of operations needed to get exactly n 'H' characters
+    using only 'Copy All' and 'Paste' operations.
+    
+    :param n: The target number of 'H' characters
+    :return: Minimum number of operations, or 0 if n is impossible to achieve
+    """
+    if n < 2:
         return 0
     
     operations = 0
@@ -19,7 +19,3 @@ def min_operations(n):
         divisor += 1
     
     return operations
-
-if __name__ == "__main__":
-    n = 9
-    print(min_operations(n))
