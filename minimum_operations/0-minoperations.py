@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-    """
-    Calculate the minimum number of operations needed to get exactly n 'H' characters
-    using only 'Copy All' and 'Paste' operations.
-    
-    :param n: The target number of 'H' characters
-    :return: Minimum number of operations, or 0 if n is impossible to achieve
-    """
+"""
+This module contains the function minOperations.
+
+The function calculates the minimum number of operations needed to get exactly 
+n 'H' characters using only 'Copy All' and 'Paste' operations.
+"""
+
 def minOperations(n):
 
     if n < 2:
