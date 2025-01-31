@@ -2,9 +2,10 @@
 """
 This module contains the function minOperations.
 
-The function calculates the minimum number of operations needed to get exactly 
+The function calculates the minimum number of operations needed to get exactly
 n 'H' characters using only 'Copy All' and 'Paste' operations.
 """
+
 
 def minOperations(n):
 
