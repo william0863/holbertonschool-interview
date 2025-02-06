@@ -1,15 +1,6 @@
 #!/usr/bin/python3
 
-"""
-Log Metrics Script
-
-This script reads lines from standard input and computes statistics on HTTP log entries.
-It tracks total file size and counts occurrences of specific HTTP status codes.
-Statistics are printed every 10 lines or when the script is interrupted with CTRL+C.
-
-Expected log format:
-<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
-"""
+"""Log Metrics Script"""
 
 import sys
 import signal
