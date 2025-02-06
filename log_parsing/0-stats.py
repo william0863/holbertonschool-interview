@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-
 """Log Metrics Script"""
 
 import sys
 import signal
 
+status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+total_size = 0
+line_count = 0
 
 def print_stats():
     """Prints the accumulated statistics."""
@@ -12,11 +14,6 @@ def print_stats():
     for code in sorted(status_codes):
         if status_codes[code] > 0:
             print("{}: {}".format(code, status_codes[code]))
-            
-
-status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-total_size = 0
-line_count = 0
 
 def signal_handler(sig, frame):
     """Handles SIGINT (CTRL+C) and prints statistics before exiting."""
@@ -50,4 +47,3 @@ try:
 except KeyboardInterrupt:
     print_stats()
     sys.exit(0)
-
