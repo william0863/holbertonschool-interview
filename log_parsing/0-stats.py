@@ -18,12 +18,14 @@ total_size = 0
 line_count = 0
 
 def print_stats():
+    """Prints the accumulated statistics."""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes):
         if status_codes[code] > 0:
             print("{}: {}".format(code, status_codes[code]))
 
 def signal_handler(sig, frame):
+    """Handles SIGINT (CTRL+C) and prints statistics before exiting."""
     print_stats()
     sys.exit(0)
 
