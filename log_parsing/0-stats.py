@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Log Metrics Script"""
+"""
+Log Metrics Script
+"""
+
 
 import sys
 import signal
