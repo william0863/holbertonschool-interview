@@ -1,9 +1,4 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
-
-int wildcmp(char *s1, char *s2);
-
-#endif /* HOLBERTON_H */
+#include "holberton.h"
 
 /**
  * wildcmp - Compares two strings allowing for wildcard * in s2
@@ -28,4 +23,3 @@ int wildcmp(char *s1, char *s2)
     }
     return (0);
 }
-
