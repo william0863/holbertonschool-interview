@@ -1,30 +1,30 @@
 #include "regex.h"
 
 /**
- * regex_match - function that checks whether a given pattern matches a given string
+ * regex_match - checks if a string matches a regex pattern
  * @str: string
  * @pattern: pattern
  * Return: matched regex
  */
 int regex_match(char const *str, char const *pattern)
 {
-    if (!pattern || !str)
-        return 0;
+	int first_match;
 
-    if (*pattern == '\0')
-        return (*str == '\0');
+	if (!pattern || !str)
+		return (0);
 
-    int first_match = (*str && (*str == *pattern || *pattern == '.'));
+	if (*pattern == '\0')
+		return (*str == '\0' ? 1 : 0);
 
-    // Handle '*'
-    if (*(pattern + 1) == '*')
-    {
-        return (regex_match(str, pattern + 2) ||
-                (first_match && regex_match(str + 1, pattern)));
-    }
-    else
-    {
-        return (first_match && regex_match(str + 1, pattern + 1));
-    }
+	first_match = (*str && (*str == *pattern || *pattern == '.'));
+
+	if (*(pattern + 1) == '*')
+	{
+		return (regex_match(str, pattern + 2) ||
+			(first_match && regex_match(str + 1, pattern)));
+	}
+	else
+	{
+		return (first_match && regex_match(str + 1, pattern + 1));
+	}
 }
-
