@@ -1,14 +1,20 @@
 #!/usr/bin/python3
 """
-Create a function def pascal_triangle(n): that returns a list of lists of
-integers representing the Pascal’s triangle of n:
-
-Returns an empty list if n <= 0
-You can assume n will be always an integer
+Module for generating Pascal's Triangle
 """
 
 
 def pascal_triangle(n):
+    """
+    Generate Pascal's Triangle
+
+    Args:
+        n (int): number of rows
+
+    Returns:
+        list: A list of lists of integers
+              Returns empty list if n <= 0
+    """
     if n <= 0:
         return []
 
