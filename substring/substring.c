@@ -11,7 +11,6 @@
  *
  * Return: array of indices
  */
-
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
     int len_s = strlen(s);
@@ -28,9 +27,9 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
     total_len = word_len * nb_words;
 
     for (i = 0; i <= len_s - total_len; i++) {
-        int *result = process_substring(s, words, nb_words, i, word_len);
+        int result = process_substring(s, words, nb_words, i, word_len);
         
-        if (result != NULL) {
+        if (result != -1) {
             indices = realloc(indices, sizeof(int) * (count + 1));
             if (indices == NULL)
                 return (NULL);
@@ -42,7 +41,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
     return (indices);
 }
 
-/**
+ /**
  * process_substring - Checks if substring concatenate words
  * @s: string
  * @words: Array of words 
@@ -52,7 +51,7 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
  *
  * Return: Pointer to result if match is found
  */
-int *process_substring(char const *s, char const **words, int nb_words, int i, int word_len)
+int process_substring(char const *s, char const **words, int nb_words, int i, int word_len)
 {
     int used[nb_words];
     int j, k;
@@ -67,8 +66,8 @@ int *process_substring(char const *s, char const **words, int nb_words, int i, i
             }
         }
         if (k == nb_words)
-            return (NULL);
+            return (-1);
     }
 
-    return (s + i);
+    return (i);
 }
