@@ -69,5 +69,5 @@ int process_substring(char const *s, char const **words, int nb_words, int i, in
             return (-1);
     }
 
-    return (i);
+    return (i);  // Return the index of the matching substring
 }
