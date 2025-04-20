@@ -16,7 +16,6 @@ def isWinner(x, nums):
         name of the player that won the most rounds
               Returns none if name of player cant be determined
     """
-def isWinner(x, nums):
     if not nums or x < 1:
         return None
 
